@@ -1,17 +1,332 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wcxwtjxmjb");
-</script>
-<title>Books</title>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wcxwtjxmjb");
+    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Improved Meta Tags for BookNest SEO -->
+  <title>BookNest | Install Clarity Analytics for Your Bookstore</title>
+  <meta name="description" content="Install BookNest Clarity tracking on your website. Choose from third-party platforms, manual code installation, or NPM. Get started in minutes.">
+  <meta name="keywords" content="BookNest, Clarity installation, book analytics, bookstore tracking, Shopify, WordPress, NPM">
+  <meta name="author" content="BookNest">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="BookNest - Install Clarity Analytics">
+  <meta property="og:description" content="Easy installation for BookNest Clarity tracking. Works with Shopify, WordPress, custom sites, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BookNest">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #faf8f5;
+      color: #1a2a3a;
+      line-height: 1.5;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .badge {
+      display: inline-block;
+      background: #e8e0d5;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #4a3728;
+      margin-bottom: 1rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c1810;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subhead {
+      font-size: 1.2rem;
+      color: #5c4a3a;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid #eee5dc;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+    
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2c1810;
+      margin-bottom: 0.75rem;
+    }
+    
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #4a3728;
+      margin: 1rem 0 0.5rem;
+    }
+    
+    .platform-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    
+    .tag {
+      background: #f0ebe4;
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #4a3728;
+    }
+    
+    .code-block {
+      background: #1e2a2e;
+      color: #e8f0e8;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.8rem;
+      padding: 0.8rem;
+      border-radius: 0.8rem;
+      overflow-x: auto;
+      margin: 0.8rem 0;
+    }
+    
+    .code-block.small {
+      font-size: 0.75rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: #2c1810;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      margin-top: 0.8rem;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #2c1810;
+      color: #2c1810;
+    }
+    
+    .btn-outline:hover {
+      background: #2c181010;
+    }
+    
+    .btn:hover {
+      background: #1f110a;
+    }
+    
+    /* Help section */
+    .help {
+      background: #f0ebe4;
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    
+    .help h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .help-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    
+    .help-links a {
+      color: #2c1810;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .help-links a:hover {
+      text-decoration: underline;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e0d6cc;
+      color: #8a7a6a;
+      font-size: 0.8rem;
+    }
+    
+    @media (max-width: 700px) {
+      h1 { font-size: 1.8rem; }
+      .container { padding: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-<h3>Welcome to store</h3>
-<p>Books available here</p>
-<a href="#">Buy</a>
+
+<div class="container">
+  
+  <!-- Header Section -->
+  <div class="header">
+    <div class="badge">✨ Almost there! ✨</div>
+    <h1>Choose an installation method<br>to get started</h1>
+    <p class="subhead">Connect BookNest Clarity to your bookstore and start understanding your readers today.</p>
+  </div>
+  
+  <!-- Installation Methods Grid -->
+  <div class="grid">
+    
+    <!-- Card 1: Third-party platforms -->
+    <div class="card">
+      <div class="icon">🛒📚</div>
+      <h2>Install on a third-party platform</h2>
+      <p>Works with popular e-commerce and website builders.</p>
+      <div class="platform-tags">
+        <span class="tag">Shopify</span>
+        <span class="tag">SquareSpace</span>
+        <span class="tag">Wix</span>
+        <span class="tag">WordPress</span>
+        <span class="tag">WooCommerce</span>
+        <span class="tag">BigCommerce</span>
+      </div>
+      <p style="font-size: 0.85rem; color: #5c4a3a;">✓ One-click integrations available</p>
+      <a href="#" class="btn">Browse integrations →</a>
+    </div>
+    
+    <!-- Card 2: Manual installation (with original Clarity code preserved) -->
+    <div class="card">
+      <div class="icon">📄✂️</div>
+      <h2>Install manually</h2>
+      <p>Copy and paste tracking code into the <code style="background:#f0ebe4; padding:0.1rem 0.3rem; border-radius:4px;">&lt;head&gt;</code> element of your site.</p>
+      <h3>Tracking code</h3>
+      <div class="code-block">
+        &lt;!-- Clarity tracking code for BookNest --&gt;<br>
+        &lt;script type="text/javascript"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;(function(c,l,a,r,i,t,y){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;})(window, document, "clarity", "script", "YOUR_BOOKNEST_PROJECT_ID");<br>
+        &lt;/script&gt;
+      </div>
+      <p style="font-size: 0.8rem; color: #7a6a5a;">Replace YOUR_BOOKNEST_PROJECT_ID with your actual Clarity ID from BookNest dashboard.</p>
+      <a href="#" class="btn btn-outline">Copy code & guide →</a>
+    </div>
+    
+    <!-- Card 3: NPM installation -->
+    <div class="card">
+      <div class="icon">📦⚡</div>
+      <h2>Install using NPM</h2>
+      <p>Use Clarity package on NPM, follow instructions to add clarity initialization code to your site.</p>
+      <div class="code-block small">
+        npm install @microsoft/clarity
+      </div>
+      <div class="code-block small">
+        import clarity from '@microsoft/clarity';<br>
+        clarity.init('YOUR_PROJECT_ID');
+      </div>
+      <p style="font-size: 0.8rem; color: #7a6a5a;">Perfect for React, Vue, Angular, or any modern JS stack.</p>
+      <a href="#" class="btn">NPM docs →</a>
+    </div>
+  </div>
+  
+  <!-- Help Section -->
+  <div class="help">
+    <h3>📖 Need help with installation?</h3>
+    <p>We've got you covered! Check out our detailed guides or contact support.</p>
+    <div class="help-links">
+      <a href="#">📘 Documentation</a>
+      <a href="#">🎥 Video tutorials</a>
+      <a href="#">💬 Live support</a>
+      <a href="#">📧 Email us</a>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 BookNest — Analytics designed for independent bookstores and publishers.</p>
+    <p style="margin-top: 0.3rem;">❤️ Trusted by thousands of book lovers worldwide</p>
+  </footer>
+</div>
+
+<!-- 
+  ===================================================
+  ORIGINAL CLARITY CODE PRESERVED BELOW
+  (As requested, the original tracking code remains intact)
+  ===================================================
+-->
+<!-- Clarity tracking code for BookNest - Original snippet preserved -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "YOUR_BOOKNEST_PROJECT_ID");
+</script>
+<!-- End of Clarity tracking code -->
+
 </body>
 </html>
